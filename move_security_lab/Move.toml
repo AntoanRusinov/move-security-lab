@@ -1,0 +1,22 @@
+[package]
+name = "move_security_lab"
+version = "1.0.0"
+authors = []
+
+[addresses]
+move_security_lab = "0x42"
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "4ace64edcc41878fe348c07238cfe497a5cb6714"
+subdir = "aptos-move/framework/aptos-framework"
+
+[dependencies.AptosStdlib]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "4ace64edcc41878fe348c07238cfe497a5cb6714"
+subdir = "aptos-move/framework/aptos-stdlib"
+
+[dependencies.MoveStdlib]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "4ace64edcc41878fe348c07238cfe497a5cb6714"
+subdir = "aptos-move/framework/move-stdlib"
