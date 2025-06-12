@@ -2,45 +2,31 @@
 
 [move]
 version = 3
-manifest_digest = "C3FFA409C25C36EC0763F637CC4F1607B57A94F92ED7737D1A0FBDDFBF64D55F"
-deps_digest = "F8BBB0CCB2491CA29A3DF03D6F92277A4F3574266507ACD77214D37ECA3F3082"
+manifest_digest = "E37CBC956E33515A3B6CAFAFF1121E63A9AD743C41190E684E0944094C30F64B"
+deps_digest = "060AD7E57DFB13104F21BE5F5C3759D03F0553FC3229247D9A7A6B45F50D03A3"
 dependencies = [
-  { id = "SuiProver", name = "SuiProver" },
+  { id = "AptosFramework", name = "AptosFramework" },
+  { id = "AptosStdlib", name = "AptosStdlib" },
+  { id = "MoveStdlib", name = "MoveStdlib" },
+]
+
+[[move.package]]
+id = "AptosFramework"
+source = { git = "https://github.com/aptos-labs/aptos-core.git", rev = "4ace64edcc41878fe348c07238cfe497a5cb6714", subdir = "aptos-move/framework/aptos-framework" }
+
+dependencies = [
+  { id = "AptosStdlib", name = "AptosStdlib" },
+  { id = "MoveStdlib", name = "MoveStdlib" },
+]
+
+[[move.package]]
+id = "AptosStdlib"
+source = { git = "https://github.com/aptos-labs/aptos-core.git", rev = "4ace64edcc41878fe348c07238cfe497a5cb6714", subdir = "aptos-move/framework/aptos-stdlib" }
+
+dependencies = [
+  { id = "MoveStdlib", name = "MoveStdlib" },
 ]
 
 [[move.package]]
 id = "MoveStdlib"
-source = { git = "https://github.com/asymptotic-code/sui.git", rev = "next", subdir = "crates/sui-framework/packages/move-stdlib" }
-
-[[move.package]]
-id = "Prover"
-source = { git = "https://github.com/asymptotic-code/sui-prover.git", rev = "main", subdir = "packages/prover" }
-
-dependencies = [
-  { id = "MoveStdlib", name = "MoveStdlib" },
-]
-
-[[move.package]]
-id = "Sui"
-source = { git = "https://github.com/asymptotic-code/sui.git", rev = "next", subdir = "crates/sui-framework/packages/sui-framework" }
-
-dependencies = [
-  { id = "MoveStdlib", name = "MoveStdlib" },
-]
-
-[[move.package]]
-id = "SuiProver"
-source = { git = "https://github.com/asymptotic-code/sui-prover.git", rev = "main", subdir = "packages/sui-prover" }
-
-dependencies = [
-  { id = "SuiSpecs", name = "SuiSpecs" },
-]
-
-[[move.package]]
-id = "SuiSpecs"
-source = { git = "https://github.com/asymptotic-code/sui-prover.git", rev = "main", subdir = "packages/sui-framework-specs" }
-
-dependencies = [
-  { id = "Prover", name = "Prover" },
-  { id = "Sui", name = "Sui" },
-]
+source = { git = "https://github.com/aptos-labs/aptos-core.git", rev = "4ace64edcc41878fe348c07238cfe497a5cb6714", subdir = "aptos-move/framework/move-stdlib" }
